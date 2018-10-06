@@ -1,0 +1,64 @@
+// COLOR VARIABLES
+$color-primary: #f9f8f6;
+$color-primary-dark: #b28451;
+
+$color-secondary: #101d2c;
+
+$color-grey-primary: #f9f8f6;
+$color-grey-secondary: #959593;
+
+// FONT VARIABLES
+$font-primary: "Montserrat", sans-serif;
+//$font-display: "Josefin Sans", sans-serif;
+
+// RESPONSIVE BREAKPOINTS
+$bp-largest: 75em; // 1200px
+$bp-large: 62.5em; // 1000px
+$bp-medium: 50em; // 800px;
+$bp-small: 37.5em; // 600px;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; // 10px/16px = 62.5% -> 1rem = 10px
+
+  @media only screen and (max-width: 1800px) {
+    font-size: 75%; //1rem=12px, 12/16=75%
+  }
+  @media only screen and (max-width: 1200px) {
+    font-size: 56.25%; //1rem=9px, 9/16=56.25%
+  }
+  @media only screen and (max-width: 900px) {
+    font-size: 50%; //1rem=8px, 8/16=50%
+  }
+}
+
+body {
+  font-family: $font-primary;
+  color: $color-grey-primary;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+.container {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr minmax(min-content, 120rem) 1fr;
+  background-color: $color-grey-primary;
+}
+
+.header,
+.magazine {
+  grid-column: 2;
+
+  @media only screen and (max-width: 120rem) {
+    padding: 0rem 4rem;
+  }
+}

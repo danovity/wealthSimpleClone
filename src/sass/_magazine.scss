@@ -1,0 +1,63 @@
+.magazine {
+  background: $color-grey-primary;
+  width: 100%;
+  display: grid;
+  grid-template-rows: min-content min-content;
+
+  &-hero {
+    display: grid;
+    height: 85vh;
+    grid-template-rows: 1fr min-content;
+    padding: 2rem 0rem;
+    width: 100%;
+
+    &__main {
+      display: grid;
+      justify-items: center;
+      grid-template-rows: repeat(3, min-content);
+      align-content: center;
+      grid-row-gap: 1rem;
+    }
+
+    &__logo {
+    }
+
+    &__nav {
+      color: black;
+      justify-self: center;
+
+      &-list {
+        list-style: none;
+        font-weight: 500;
+        display: flex;
+
+        font-size: 2rem;
+      }
+
+      &-item {
+        color: black;
+        padding: 0rem 2rem;
+        transition: all 0.2s;
+
+        &:hover {
+          cursor: pointer;
+          text-decoration: underline;
+        }
+
+        &.active {
+          color: $color-grey-secondary;
+          position: relative;
+          &::before {
+            position: absolute;
+            content: ".";
+            height: 0.5rem;
+            width: 0.5rem;
+            color: $color-grey-secondary;
+            top: -20%;
+            left: 0;
+          }
+        }
+      }
+    }
+  }
+}

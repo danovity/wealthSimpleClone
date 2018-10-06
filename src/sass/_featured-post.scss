@@ -1,0 +1,32 @@
+.featured-post {
+  display: grid;
+  align-items: center;
+  justify-items: end;
+  position: relative;
+
+  width: 100%;
+  margin: 4rem 0rem;
+
+  &__background-image {
+    object-fit: cover;
+    width: 100%;
+  }
+  &__exerpt {
+    display: grid;
+    grid-template-rows: repeat(3, min-content);
+    grid-row-gap: 1rem;
+
+    position: absolute;
+    bottom: 60px;
+    margin: 0;
+    right: 0;
+    width: 580px;
+    color: black;
+    padding: 3rem 3rem 1.5rem;
+    background: linear-gradient(
+      to right bottom,
+      rgba(255, 255, 255, 0.75),
+      rgba(255, 255, 255, 0.75)
+    );
+  }
+}

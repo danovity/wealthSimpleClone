@@ -1,0 +1,13 @@
+.button {
+  &__nav {
+    background-color: #fcb132;
+    color: white;
+    padding: 1rem 2rem 1rem 2rem;
+    border-radius: 3rem;
+    transition: all 0.2s;
+    &:hover {
+      background: #faa600;
+      cursor: pointer;
+    }
+  }
+}

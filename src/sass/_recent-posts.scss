@@ -1,0 +1,29 @@
+.recent-posts {
+  width: 100%;
+  margin: 4rem 0rem;
+
+  &__list {
+    width: 100%;
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    grid-column-gap: 3rem;
+  }
+
+  &__item {
+    &--image-container {
+      width: 100%;
+    }
+    &--image {
+      width: 100%;
+    }
+    &--content {
+      display: grid;
+      grid-template-rows: repeat(3, min-content);
+      grid-row-gap: 2rem;
+      margin-top: 1rem;
+      padding: 3rem;
+    }
+  }
+}

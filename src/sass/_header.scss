@@ -1,0 +1,27 @@
+.header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  color: black;
+  padding: 2rem 15rem 2rem 15rem;
+  font-size: 3rem;
+  background-color: white;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+
+  &__nav {
+    &-list {
+      list-style: none;
+      display: flex;
+      justify-content: end;
+      font-size: 1.5rem;
+      align-items: center;
+    }
+    &-item {
+      margin-right: 1rem;
+      font-weight: 500;
+    }
+  }
+}

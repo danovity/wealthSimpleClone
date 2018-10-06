@@ -1,0 +1,26 @@
+.posts {
+  &__header {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    color: $color-grey-secondary;
+    font-weight: 500;
+  }
+  &__title {
+    color: black;
+    font-size: 2.4rem;
+    font-weight: 500;
+    transition: all 0.2s;
+    line-height: 1.3;
+
+    &:hover {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+  &__content {
+    color: black;
+    font-size: 1.8rem;
+    line-height: 1.3;
+    font-weight: 400;
+  }
+}
