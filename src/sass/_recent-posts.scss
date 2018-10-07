@@ -9,6 +9,10 @@
     grid-template-columns: 1fr 1fr;
     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
     grid-column-gap: 3rem;
+    &--left {
+    }
+    &--right {
+    }
   }
 
   &__item {
