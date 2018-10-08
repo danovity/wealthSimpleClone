@@ -1,26 +1,15 @@
-"use strict";
-
-require("dotenv").config();
-
-const PORT = process.env.PORT || 8080;
-const ENV = process.env.ENV || "development";
 const express = require("express");
 const bodyParser = require("body-parser");
-var cors = require("cors");
-
-let grabity = require("grabity");
-
-if (process.env.ENV === "production") {
-  app.use(express.static("client/build"));
-}
-
+const grabity = require("grabity");
+const PORT = 8080; // default port 8080
+//Setup express app
 const app = express();
 
+//Setup middleware
 app.use(
   bodyParser.urlencoded({
-    extended: true
-  }),
-  cors()
+    extended: false
+  })
 );
 
 app.use(function(req, res, next) {
@@ -31,27 +20,26 @@ app.use(function(req, res, next) {
   );
   next();
 });
-app.use(cors());
 
 app.set("view options", { layout: false });
+app.use(express.static(__dirname + "/public"));
 
-app.get("/", (req, res) => {
-  res.send("Hello World!");
-});
-
-app.listen(PORT, () => {
-  console.log("Example app listening on port " + PORT);
+app.get("/", function(req, res) {
+  res.render("index.html");
 });
 
 app.post("/articles", (req, res) => {
   let url = req.body.url;
 
   (async () => {
-    try {
-      let it = await grabity.grabIt(url);
+    let content = await grabity.grabIt(url);
 
-      console.log(it);
-      res.send(it);
-    } catch (error) {}
+    res.send(content);
   })();
 });
+
+app.listen(PORT, () => {
+  console.log(`Example app listening on port ${PORT}!`);
+});
+
+module.exports = app;
