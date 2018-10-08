@@ -118,9 +118,10 @@ body {
   z-index: 999; }
   .header__nav-list {
     list-style: none;
-    display: flex;
+    display: grid;
     justify-content: end;
     font-size: 1.5rem;
+    grid-template-columns: min-content auto;
     align-items: center; }
   .header__nav-item {
     margin-right: 1rem;
@@ -278,14 +279,16 @@ body {
 
 .recent-posts {
   width: 100%;
-  margin: 4rem 0rem; }
+  margin: 4rem 0rem;
+  display: grid; }
   .recent-posts__list {
     width: 100%;
     list-style: none;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-    grid-column-gap: 3rem; }
+    grid-column-gap: 3rem;
+    position: relative; }
   .recent-posts__item--image-container {
     width: 100%; }
   .recent-posts__item--image {
@@ -306,3 +309,23 @@ body {
   .button__nav:hover {
     background: #faa600;
     cursor: pointer; }
+
+.button__load-more-posts {
+  background-color: #fcb132;
+  position: relative;
+  text-align: center;
+  z-index: 2;
+  color: white;
+  text-decoration: none;
+  padding: 1.5rem;
+  border-radius: 3rem; }
+  .button__load-more-posts:hover {
+    background: #faa600;
+    cursor: pointer; }
+
+.load-more-posts {
+  text-align: center;
+  width: 25%;
+  font-size: 2.5rem;
+  text-decoration: none;
+  justify-self: center; }

@@ -14,9 +14,10 @@
   &__nav {
     &-list {
       list-style: none;
-      display: flex;
+      display: grid;
       justify-content: end;
       font-size: 1.5rem;
+      grid-template-columns: min-content auto;
       align-items: center;
     }
     &-item {

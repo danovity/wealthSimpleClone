@@ -10,4 +10,26 @@
       cursor: pointer;
     }
   }
+  &__load-more-posts {
+    background-color: #fcb132;
+    position: relative;
+    text-align: center;
+    z-index: 2;
+    color: white;
+    text-decoration: none;
+    padding: 1.5rem;
+    border-radius: 3rem;
+    &:hover {
+      background: #faa600;
+      cursor: pointer;
+    }
+  }
+}
+
+.load-more-posts {
+  text-align: center;
+  width: 25%;
+  font-size: 2.5rem;
+  text-decoration: none;
+  justify-self: center;
 }
