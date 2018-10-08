@@ -86,9 +86,9 @@ $(document).ready(function() {
 
     $.ajax({
       type: "POST",
-      url: "http://localhost:8080/getImageUrl",
+      url: "https://powerful-cliffs-35605.herokuapp.com/getImageUrl",
       data: {
-        itemUrl: url
+        url
       }
     }).then(data => {
       //let imageUrl = data.image;

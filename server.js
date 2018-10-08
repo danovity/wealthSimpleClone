@@ -40,15 +40,15 @@ app.listen(PORT, () => {
 });
 
 app.post("/getImageUrl", (req, res) => {
-  let itemUrl = req.body.itemUrl;
+  let url = req.body.url;
   //let itemUrl = JSON.parse(Object.keys(req.body)[0]).itemUrl;
   //console.log(typeof itemUrl);
 
-  console.log("itemUrl is", itemUrl);
+  console.log("url is", url);
 
   (async () => {
     try {
-      let it = await grabity.grabIt(itemUrl);
+      let it = await grabity.grabIt(url);
 
       console.log(it);
       res.send(it);
