@@ -58,6 +58,9 @@
           top: -40%;
           left: -6%;
           font-size: 2rem;
+          @media only screen and (max-width: 430px) {
+            display: none;
+          }
         }
       }
     }
@@ -89,5 +92,13 @@
     display: grid;
     grid-template-columns: min-content min-content;
     grid-column-gap: 2rem;
+
+    @media only screen and (max-width: 430px) {
+      grid-template-columns: initial;
+    }
+  }
+
+  &__copyright {
+    overflow-wrap: break-word;
   }
 }

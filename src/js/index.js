@@ -1,7 +1,5 @@
 import { elements } from "./views/base";
 $(document).ready(function() {
-  console.log("ready!");
-
   const state = {
     page: -1
   };
@@ -39,8 +37,6 @@ $(document).ready(function() {
 
     let articleIds = await state.idOfTopStories;
     let currentArticleIds = await articleIds.slice(start, end);
-    console.log(articleIds);
-    console.log(currentArticleIds);
 
     return await Promise.all(
       currentArticleIds.map(async function(articleId) {
@@ -56,10 +52,7 @@ $(document).ready(function() {
   //function: construct article objects
   async function renderArticles(start, end) {
     state.page = state.page + 1;
-    console.log("state.page is,", state.page);
     let articlesLoaded = await loadArticles(start, end);
-    console.log(articlesLoaded);
-    //articlesLoaded.map(cur => console.log(cur.url));
 
     return await Promise.all(
       articlesLoaded.map(function(article, index) {
@@ -68,34 +61,17 @@ $(document).ready(function() {
     );
   }
 
-  //construct article objects for rendering
+  //first time, construct article objects for rendering
   renderArticles(0, 30);
 
   async function createViewForItem(url, counter) {
-    /* fetch("http://localhost:8080/getImageUrl", {
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/x-www-form-urlencoded"
-      },
-      method: "post",
-      mode: "cors",
-      body: JSON.stringify({ itemUrl: url })
-    })
-      .then(response => console.log("response is,", response.json()))
-      .then(result => console.log("result is", result)); */
-
     $.ajax({
       type: "POST",
-      url: "https://powerful-cliffs-35605.herokuapp.com/getImageUrl",
+      url: " https://hackernews-reloaded.herokuapp.com/articles",
       data: {
         url
       }
     }).then(data => {
-      //let imageUrl = data.image;
-      console.log("counter is", counter);
-      console.log("data is ", data);
-      console.log("data.length is,", data.length);
-
       if (counter % 2 === 0) {
         if (data.image) {
           let markup = ` <li class="recent-posts__item">
@@ -189,22 +165,8 @@ $(document).ready(function() {
           elements.recentPostListLeft.insertAdjacentHTML("beforeend", markup);
         }
       }
-      // console.log("imageUrl is ", imageUrl);
-
-      /*  if (imageUrl) {
-        $('.articles').append(`<div><h3>${element.title}</h3>
-                           <img src=${imageUrl} /></div>
-                            `);
-    } else {
-        $('.articles').append(`<h3>${element.title}</h3>
-                              `);
-    }  */
       return data;
     });
-
-    /* result.done(function(html) {
-      console.log("html is", html);
-    }); */
   }
   var doit;
   $(window).scroll(function() {
@@ -212,10 +174,7 @@ $(document).ready(function() {
       hH = $(".load-more-posts").outerHeight(),
       wH = $(window).height(),
       wS = $(this).scrollTop();
-    //console.log(hT - wH, wS);
     if (wS > hT + hH - wH) {
-      //alert("you have scrolled to the h1!");
-      //renderArticles();
       clearTimeout(doit);
       doit = setTimeout(renderArticles, 2000);
     }

@@ -29,6 +29,9 @@ body {
   grid-template-rows: 1fr;
   grid-template-columns: 1fr minmax(min-content, 120rem) 1fr;
   background-color: #f9f8f6; }
+  @media only screen and (max-width: 430px) {
+    .container {
+      grid-template-columns: initial; } }
 
 .header,
 .magazine {
@@ -37,6 +40,10 @@ body {
     .header,
     .magazine {
       padding: 0rem 4rem; } }
+  @media only screen and (max-width: 500px) {
+    .header,
+    .magazine {
+      padding: 0rem 0rem; } }
 
 .logo {
   font-weight: 700;
@@ -53,6 +60,7 @@ body {
 
 .heading-2 {
   font-size: 2rem;
+  text-align: center;
   line-height: 1;
   text-transform: uppercase;
   padding-top: 2rem;
@@ -116,6 +124,11 @@ body {
   position: fixed;
   top: 0;
   z-index: 999; }
+  @media only screen and (max-width: 700px) {
+    .header {
+      grid-template-columns: 1fr;
+      justify-items: center;
+      padding: 2rem 1rem; } }
   .header__nav-list {
     list-style: none;
     display: grid;
@@ -156,6 +169,9 @@ body {
         color: black;
         padding: 0rem 2rem;
         transition: all 0.2s; }
+        @media only screen and (max-width: 480px) {
+          .magazine-hero__nav-item {
+            display: none; } }
         .magazine-hero__nav-item:hover {
           cursor: pointer;
           text-decoration: underline; }
@@ -193,6 +209,10 @@ body {
     color: black;
     padding: 3rem 3rem 1.5rem;
     background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)); }
+    @media only screen and (max-width: 600px) {
+      .featured-post__exerpt {
+        position: initial;
+        width: auto; } }
 
 .footer {
   grid-column: 1/3;
@@ -235,6 +255,9 @@ body {
         top: -40%;
         left: -6%;
         font-size: 2rem; }
+        @media only screen and (max-width: 430px) {
+          .footer__title--bottom:last-child::before {
+            display: none; } }
   .footer__links {
     font-size: 1.8rem; }
     .footer__links--icons {
@@ -254,6 +277,11 @@ body {
     display: grid;
     grid-template-columns: min-content min-content;
     grid-column-gap: 2rem; }
+    @media only screen and (max-width: 430px) {
+      .footer__titles {
+        grid-template-columns: initial; } }
+  .footer__copyright {
+    overflow-wrap: break-word; }
 
 .posts__header {
   font-size: 1.4rem;
@@ -325,7 +353,6 @@ body {
 
 .load-more-posts {
   text-align: center;
-  width: 25%;
   font-size: 2.5rem;
   text-decoration: none;
   justify-self: center; }

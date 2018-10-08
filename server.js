@@ -10,6 +10,10 @@ var cors = require("cors");
 
 let grabity = require("grabity");
 
+if (process.env.ENV === "production") {
+  app.use(express.static("client/build"));
+}
+
 const app = express();
 
 app.use(
@@ -39,12 +43,8 @@ app.listen(PORT, () => {
   console.log("Example app listening on port " + PORT);
 });
 
-app.post("/getImageUrl", (req, res) => {
+app.post("/articles", (req, res) => {
   let url = req.body.url;
-  //let itemUrl = JSON.parse(Object.keys(req.body)[0]).itemUrl;
-  //console.log(typeof itemUrl);
-
-  console.log("url is", url);
 
   (async () => {
     try {

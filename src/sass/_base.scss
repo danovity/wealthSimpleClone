@@ -52,6 +52,10 @@ body {
   grid-template-rows: 1fr;
   grid-template-columns: 1fr minmax(min-content, 120rem) 1fr;
   background-color: $color-grey-primary;
+
+  @media only screen and (max-width: 430px) {
+    grid-template-columns: initial;
+  }
 }
 
 .header,
@@ -60,5 +64,9 @@ body {
 
   @media only screen and (max-width: 120rem) {
     padding: 0rem 4rem;
+  }
+
+  @media only screen and (max-width: 500px) {
+    padding: 0rem 0rem;
   }
 }
