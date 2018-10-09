@@ -93,30 +93,6 @@ $(document).ready(function() {
           </div>
       </li>`;
           elements.recentPostListRight.insertAdjacentHTML("beforeend", markup);
-        } else {
-          let markup = ` <li class="recent-posts__item">
-          <figure class="recent-posts__item--image-container">
-              <img src="https://wealthsimple-grow.ghost.io/content/images/2018/10/NatashaRothwell_final.jpg"
-                  alt="
-              recent-posts-image" class="recent-posts__item--image">
-          </figure>
-          <div class="recent-posts__item--content">
-              <div class="posts__header">
-                  Money Diaries
-              </div>
-              <div class="posts__title">
-                  Natasha Rothwell Plays an Accountant on 'Insecure.' Her Real Life Wasn't So
-                  Excel-Ready.
-              </div>
-              <div class="posts__content">
-                  A Money Diary about subsidized housing, writing for 'Saturday Night Live,' and
-                  getting
-                  into
-                  credit card debt from the actress ('Love, Simon') and writer.
-              </div>
-          </div>
-      </li>`;
-          elements.recentPostListRight.insertAdjacentHTML("beforeend", markup);
         }
       } else {
         if (data.image) {
@@ -135,30 +111,6 @@ $(document).ready(function() {
               </div>
               <div class="posts__content">
                   ${data.description}
-              </div>
-          </div>
-      </li>`;
-          elements.recentPostListLeft.insertAdjacentHTML("beforeend", markup);
-        } else {
-          let markup = ` <li class="recent-posts__item">
-          <figure class="recent-posts__item--image-container">
-              <img src="https://wealthsimple-grow.ghost.io/content/images/2018/10/NatashaRothwell_final.jpg"
-                  alt="
-              recent-posts-image" class="recent-posts__item--image">
-          </figure>
-          <div class="recent-posts__item--content">
-              <div class="posts__header">
-                  Money Diaries
-              </div>
-              <div class="posts__title">
-                  Natasha Rothwell Plays an Accountant on 'Insecure.' Her Real Life Wasn't So
-                  Excel-Ready.
-              </div>
-              <div class="posts__content">
-                  A Money Diary about subsidized housing, writing for 'Saturday Night Live,' and
-                  getting
-                  into
-                  credit card debt from the actress ('Love, Simon') and writer.
               </div>
           </div>
       </li>`;
